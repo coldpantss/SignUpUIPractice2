@@ -5,17 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFF00"
+    android:gravity="top"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/pikachy"
-        android:scaleType="centerCrop"/>
+    <!-- wrap_contet 본인이 갖고 있는 내용물들의 크기를 감쌀 만큼만.
+    match_parent 꽉채운다.
+    gravity : 정렬 형태. 별도의 아이콘을 정렬시엔 앞뒤로 린이어레이아웃으로 감싼다.
+
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/pikachy"
+            android:scaleType="centerCrop"/>
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="아이디"/>
 
     <EditText
@@ -27,6 +44,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="비밀번호"/>
 
     <EditText
@@ -38,6 +56,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="닉네임"/>
 
     <EditText
@@ -65,6 +84,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:text="공개 안함."/>
 
 
@@ -78,10 +98,25 @@
         android:text="이용 약관 동의."
         />
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="확인"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="취소"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="확인"/>
+
+
+    </LinearLayout>
+
 
 
 
